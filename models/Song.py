@@ -106,7 +106,7 @@ class Song:
 # if __name__ == "__main__":
 #     test1 = Song("c", "tac_gia", 5, 2001, "romantic", 300)
 #     test2 = Song("b", "tac_gia2", 4, 2002, "love", 250)
-#     test3 = Song("a", "tac_gia3", 3, 2003, "kich-tinh", 430)
+#     test3 = Song("a", "tac_gia3", 3, 2003, "test", 430)
 #     test4 = Song("test4", "tac_gia4", 2, 2004, "ridiculous", 180)
 #     test5 = Song("test5", "tac_gia5", 1, 2005, "not-have", 200)
 
