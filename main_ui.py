@@ -406,7 +406,7 @@ class MainWindow(QMainWindow):
         else:
             self.showMaximized()
             self.is_maximized = True 
-    def mousePressEvent(self, event):
+    def mousePressEvent(self, event): 
         if event.button() == Qt.LeftButton:
             self.offset = QPoint(event.position().x(),event.position().y())
         else:
@@ -1159,7 +1159,7 @@ class MainWindow(QMainWindow):
                     
         self.menu.show_menu(global_position)
         
-
+    
     def create_song_item(self, title, artist, album, duration, release_year, pic, idx):
         # Create QListWidgetItem
         new_item = QListWidgetItem()
@@ -1306,8 +1306,8 @@ class MainWindow(QMainWindow):
         # more_options_songs.setIconSize(QSize(20, 20))
         
         self.more_options_songs.setStyleSheet("""
-            QpushButton {
-                color: #6e6e6e;
+            QPushButton {
+                color: gray;
                 font-weight: 700;
                 font-size: 12px;
                 text-align: center;
