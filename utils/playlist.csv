@@ -1,5 +1,5 @@
 id_playlist,playlist_name,image_path,desc,songs
-1,Test Playlist1,D:/Desktop/GCS230575 - Python OOP/coursework-test/emiuhehehehe.jpg,Favorite Song,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22"
+1,Test Playlist1,image\default-playlist.png,Favorite Song,"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22"
 3,Test Playlist3,D:/Desktop/GCS230575 - Python OOP/Coursework-main-Innovation/image/test_image_playlist.png,Favorite Song,"31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46"
 4,Test,D:/Desktop/GCS230575 - Python OOP/Coursework-main-Innovation/image/test_image_playlist.png,Favorite Song,"1,8,5,33,38,14,15,9"
 6,Test Playlist6,image\test_image_playlist.png,Favorite Song,"31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46"
