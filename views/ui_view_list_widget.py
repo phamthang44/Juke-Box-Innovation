@@ -115,13 +115,9 @@ class Ui_MainWindow(object):
         self.more_btn.setStyleSheet(u"#more_btn {\n"
 "	border:none;\n"
 "}\n"
-"QPushButton:hover {\n"
-"	color: #434343;\n"
-"	background-color: #434343;\n"
-"}\n"
 "")
         icon = QIcon()
-        icon.addFile(u"icons/more-horizontal.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(r"icons\spotify.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.more_btn.setIcon(icon)
         self.more_btn.setIconSize(QSize(30, 30))
 
