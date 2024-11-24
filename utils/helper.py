@@ -72,7 +72,7 @@ class Helper:
         return playlists
     
     @staticmethod
-    def save_playlists_to_csv(playlists, file_path=r"utils\playlist.csv"):
+    def save_playlists_to_csv(playlists, file_path=r"utils\playlist.csv"): #this method will save as well 
         try:
             # Lọc ra những playlist không bị xóa (playlist đã xóa sẽ không có trong list này)
             data = {
@@ -93,7 +93,7 @@ class Helper:
      
        
     @staticmethod
-    def save_playlist(playlists, file_path=r"utils\playlist.csv"):
+    def save_playlist(playlists, file_path=r"utils\playlist.csv"): #this method for create playlist to save
         
         if os.path.exists(file_path):
             
