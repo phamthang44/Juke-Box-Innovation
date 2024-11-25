@@ -3,7 +3,7 @@ from PySide6.QtCore import Qt
 
 import sys
 
-
+import webbrowser
 import sys
 
 
@@ -80,13 +80,54 @@ class OpenOptions(QWidget):
         """)
         input_layout.addWidget(self.close_button)
 
+        #Frame 3 
+        self.input_link_frame = QFrame()
+        self.input_link_frame.setContentsMargins(0, 0, 0, 0)
+        self.input_link_frame.setStyleSheet("background-color: #1e1e1e")
+        self.input_frame.setStyleSheet("background-color: #1e1e1e")
+        input_link_layout = QVBoxLayout(self.input_link_frame)
+
+        self.new_link_input = QLineEdit()
+        self.new_link_input.setPlaceholderText("Enter link playlist youtube...")
+        self.new_link_input.setStyleSheet("""
+            QLineEdit {
+                padding: 8px;
+                border: 1px solid #555555;
+                background-color: #292929;
+                color: white;
+                font-weight:bold;
+            }
+        """)
+        self.add_link_button = QPushButton("Add link playlist")
+        self.add_link_button.setStyleSheet("""
+            QPushButton {
+                background-color: #1DB954;
+                font-weight:bold;
+                color: white;
+                padding: 8px;
+            }
+            QPushButton:hover {
+                background-color: #1ed760;
+            }
+        """)
+
+        input_link_layout.addWidget(self.add_link_button)
+        
+        input_link_layout.addWidget(self.new_link_input)
+
         # Add frames to the main layout
         layout.addWidget(self.name_frame)
         layout.addWidget(self.input_frame)
+        layout.addWidget(self.input_link_frame)
 
         # Close button action
         self.close_button.clicked.connect(self.close)
+        
+        #connect update name
         self.update_name_button.clicked.connect(self.update_playlist_name)
+        
+        #connect add link playlist
+        self.add_link_button.clicked.connect(self.add_link)
     def set_current_playlist_name(self, name):
         """Set the current playlist name."""
         self.current_name_label.setText(f"Current Playlist: {name}")
@@ -99,6 +140,12 @@ class OpenOptions(QWidget):
     def get_current_playlist_name(self):
         current_name = self.current_name_label
         return current_name
+    
+    def add_link(self):
+        keyword = self.new_link_input.text()
+        if keyword is None:
+            return
+        webbrowser.open(keyword)
 
 
         
