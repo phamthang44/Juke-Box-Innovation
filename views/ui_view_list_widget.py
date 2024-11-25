@@ -117,7 +117,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(r"icons\spotify.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(r"icons\more-horizontal.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.more_btn.setIcon(icon)
         self.more_btn.setIconSize(QSize(30, 30))
 
