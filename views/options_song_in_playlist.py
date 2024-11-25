@@ -286,13 +286,7 @@ class OptionSong2(OptionSong):
         if song_id < 1 and song_id > 46:
             QMessageBox.warning(self,"Error",f"Out of bound with your {song_id}!")
             return
-        
-        # if song_id not in chosen_playlist.songs:
-        #     print(f"No playlist found with the name '{keyword}'")
-        #     #QMessageBox.information(self,"Error","There is no playlist chosen!")
-        #     QMessageBox.warning(self,"Error",f"Your {song_id} you input does not have in {keyword}!")
-        #     return  # Exit early if no playlist is found 
-            
+              
         chosen_playlist.add_song(song_id)
         QMessageBox.information(self, "Successful", f"You just added the song with ID {song_id} from {keyword}")
         Helper.save_playlists_to_csv(controller.playlists)
@@ -301,3 +295,10 @@ class OptionSong2(OptionSong):
         self.main_window.show_playlist(chosen_playlist)
         self.main_window.display_song_items_1(chosen_playlist)
         return chosen_playlist
+    
+    
+        # if song_id not in chosen_playlist.songs:
+        #     print(f"No playlist found with the name '{keyword}'")
+        #     #QMessageBox.information(self,"Error","There is no playlist chosen!")
+        #     QMessageBox.warning(self,"Error",f"Your {song_id} you input does not have in {keyword}!")
+        #     return  # Exit early if no playlist is found 

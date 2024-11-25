@@ -78,8 +78,8 @@ class PlayListController():
             Helper.save_playlists_to_csv(self.playlists)
             
             print(f"Playlist with ID {playlist_object.id_playlist} removed from internal list.")
-            # Sau khi xóa, hiển thị playlist với ID = 1
-            self.main_window.show_playlist_by_id(1)  # Gọi hàm hiển thị playlist với ID = 1
+            # after removing, show the playlist with ID 1
+            self.main_window.show_playlist_by_id(1)  # call function to show playlist with ID = 1
         except ValueError:
             print("Playlist not found.")
         except Exception as e:
@@ -150,7 +150,7 @@ class PlayListController():
         self.open_menus_options.update_name_button.clicked.connect(
     lambda: self.on_playlist_name_updated(self.open_menus_options.update_playlist_name())
 )
-
+        
 
 
 

@@ -8,10 +8,10 @@ class PlayList:
         if id_playlist is None:
             self.id_playlist = self.generate_id_playlist()
         else:
-        # Đảm bảo id_playlist always is an integer 
+        # Ensure id_playlist always is an integer 
             self.id_playlist = int(id_playlist)  
         # self.id_playlist = id_playlist
-        self.songs = songs if songs is not None else [] #list này dạng số nhé 
+        self.songs = songs if songs is not None else [] #List as numbers
         self.songs_playlist = [] #library of songs 
         if name_playlist is None:
             name_playlist = self.generate_playlist_name()
@@ -114,7 +114,7 @@ class PlayList:
         return iter(self.songs_playlist)
     
     def find_songs(self, keyword, songs):
-        """Tìm kiếm bài hát theo tên, tác giả, album hoặc từ khóa."""
+        """Find song by name, album, artists"""
         if keyword == "":
             return None
         

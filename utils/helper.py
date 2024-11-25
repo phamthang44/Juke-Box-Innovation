@@ -64,7 +64,7 @@ class Helper:
                     description=row['desc'],
                     songs=songs_list
                 )
-                playlists.append(playlist) #object chứa songs nhưng songs trong data.csv lại là những số vì vậy cần phải trỏ tới đúng chỗ là song object thật chứ ko phải số 
+                playlists.append(playlist) #The object contains songs, but the songs in data.csv are numbers, so they need to point to the correct song object, not a number.
                 
         except Exception as e:
             print(f"Error loading playlists from CSV: {e}")
@@ -74,7 +74,7 @@ class Helper:
     @staticmethod
     def save_playlists_to_csv(playlists, file_path=r"utils\playlist.csv"): #this method will save as well 
         try:
-            # Lọc ra những playlist không bị xóa (playlist đã xóa sẽ không có trong list này)
+            # Filter out playlists that are not deleted (deleted playlists will not be in this list)
             data = {
                 "id_playlist": [playlist.id_playlist for playlist in playlists],
                 "playlist_name": [playlist.name_playlist for playlist in playlists],
@@ -85,7 +85,7 @@ class Helper:
 
             df = pd.DataFrame(data)
 
-            # Ghi lại toàn bộ dữ liệu vào CSV (không xóa dữ liệu cũ, mà chỉ ghi bổ sung)
+            # Record all data to CSV (do not delete old data, just add additional data)
             df.to_csv(file_path, index=False)
             print(f"Playlists saved to {file_path} successfully.")
         except Exception as e:
@@ -102,10 +102,10 @@ class Helper:
         else:
             existing_ids = []
 
-        # Lọc các playlist mới, chỉ thêm những playlist có id chưa tồn tại trong file
+        # Filter new playlists, only add playlists whose ids do not exist in the file
         new_playlists = [playlist for playlist in playlists if playlist.id_playlist not in existing_ids]
         
-        # Tạo DataFrame mới cho các playlist chưa có trong file CSV
+        # Create new DataFrame for playlists that are not in the CSV file
         data = {
             "id_playlist": [int(playlist.id_playlist) for playlist in new_playlists],
             "playlist_name": [playlist.name_playlist for playlist in new_playlists],
@@ -115,11 +115,11 @@ class Helper:
         }
         df = pd.DataFrame(data)
 
-        # Nếu file đã tồn tại, ghi vào file CSV mà không thêm tiêu đề cột
+        # If the file already exists, write to the CSV file without adding column headers
         if os.path.exists(file_path):
             df.to_csv(file_path, mode='a', header=False, index=False)
         else:
-            # Nếu file không tồn tại, ghi tất cả dữ liệu bao gồm tiêu đề
+            # If file does not exist, write all data including headers
             df.to_csv(file_path, index=False)
         
 # songs = Helper.load_data('data.csv')
