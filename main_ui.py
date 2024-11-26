@@ -318,7 +318,7 @@ class MainWindow(QMainWindow):
         self.menu = Menu()
         self.menu.add_menu_item("✅ Remove From Your Library", self.on_remove_playlist_clicked)
         self.menu.add_menu_item("Recommendations", self.controller_playlist.open_recommendations)
-        self.menu.add_menu_item("Rename the playlist", lambda: self.controller_playlist.on_clicked_rename_popup(self.current_playlist.name_playlist))
+        self.menu.add_menu_item("Rename the playlist and add link youtube", lambda: self.controller_playlist.on_clicked_rename_popup(self.current_playlist.name_playlist))
         self.menu.add_menu_item("Change the image of Playlist", self.controller_playlist.change_image_path)
         self.menu.show_menu(global_position)
     
@@ -1670,8 +1670,6 @@ def convert_time(minute_second):
 
 
 
-
-
 # if __name__ == "__main__":
     
 
@@ -1685,92 +1683,3 @@ def convert_time(minute_second):
 #     window.show()
 #     app.exec()
    
-    
-
-
-
-
-
-# songs = Helper.load_data()
-
-# test_playlist_2 = PlayList('My Favorite List')
-# test_playlist_3 = PlayList('Test 2')
-# for song in songs:
-#     test_playlist_2.add_song(song)
-    
-# test_playlist_2.display_songs()
-# print(test_playlist_2.get_info())
-# # print("Before sorting")
-# # test_playlist_2.display_songs()
-# # print("After sorting")
-# # test_playlist_2.sort_song_by_name()
-# # test_playlist_2.display_songs()
-# library = Library()
-# library.find_song("Shape of You")
-
-# controller = SongController(library)
-# controller.set_current_song(test_playlist_2.find_song("Shape of You")) # (bên in function sẽ là entry_txt)
-# controller.play()
-
-
-# print(test_playlist_2.__str__())
-    # def on_playlist_clicked(self, item):
-    #     """
-    #     Handle playlist click event.
-    #     """
-    #     # Get the widget from the clicked item
-    #     widget = self.ui.list_avatar_item_2.itemWidget(item)
-    #     if widget:
-    #         # Find the HoverFrame within the widget (it might be nested)
-    #         hover_frame = widget.findChild(HoverFrame)  # This will find the HoverFrame if it's nested
-    #         # Or if your hover frame is the main widget's layout's first item:
-    #         hover_frame = widget.layout().itemAt(0).widget() if widget.layout() else None
-            
-    #         if hover_frame and isinstance(hover_frame, HoverFrame):
-    #             self.on_item_selected(hover_frame, True)
-    
-        # def show_songs(self, selected_playlist):
-    #     if selected_playlist == []:
-    #         self.add_no_results_label()  # Nếu không có playlist, hiển thị thông báo không có kết quả
-    #         return
-    #     # Dọn sạch danh sách trước khi thêm mới
-    #     self.ui.list_show_song_in_playlist.clear()
-    #     # Gọi create_songs_items để thêm các bài hát vào list
-    #     for song in selected_playlist:
-    #         # Extract song information
-    #         title = song.name_song
-    #         artist = song.artists
-    #         album = song.album
-    #         release_year = song.release_year
-    #         duration = song.get_duration()
-    #         idx = song.id_song
-
-    #         # Create the song item and add it to the list
-    #         self.create_song_item(title, artist, album, release_year, duration, idx)
-    
-    #file_path = r'D:\Desktop\GCS230575 - Python OOP\Coursework-main\JukeBox\Prototype-main\data.csv'
-# import sys
-# from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QListWidgetItem
-# from PyQt5.QtGui import QIcon
-# from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton
-# from PySide6.QtGui import QIcon, QPixmap, QAction 
-# from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-#     QMetaObject, QObject, QPoint, QRect,
-#     QSize, QTime, QUrl, Qt, QTimer)
-
-    # def on_remove_song_clicked(self):
-    #     """Handle the remove playlist button click."""
-    #     try:
-    #         # Check if a playlist is selected
-    #         if hasattr(self, 'current_playlist') and self.current_playlist:
-    #             # pass the song as a number into remove_song(id, self.current_playlist)
-                
-                
-    #             self.controller_playlist.execute_remove_song_from_playlist()
-                
-    #             # Optionally, update the UI to remove the playlist from the list
-                
-    #         else:
-    #             print("No playlist selected for removal.")
-    #     except Exception as e:
-    #         print(f"Error in removing playlist: {e}")   

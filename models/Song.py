@@ -23,6 +23,8 @@ class Song:
         cls.id_counter_song += 1
         return cls.id_counter_song
     
+    def __lt__(self, other):
+        return self.name_song < other.name_song  # Example: Sort by title
     
     def get_album(self):
         return self.album

@@ -127,3 +127,6 @@ class PlayList:
                 songs_found.append(song)
         
         return list(set(songs_found))
+    
+    def __lt__(self, other):
+        return self.name_playlist < other.name_playlist
